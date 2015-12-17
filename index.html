@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Jquery-emojis by eshengsky</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,70 +10,29 @@
     <link rel="stylesheet" href="lib/css/bootstrap.css"/>
     <link rel="stylesheet" href="lib/css/jquery.mCustomScrollbar.min.css"/>
     <link rel="stylesheet" href="css/jquery.emojis.css"/>
-    <style>
-      .firstRow {
-        margin-top: 100px;
-      }
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<section class="page-header">
+    <h1 class="project-name">Jquery-emojis</h1>
 
-      #editor {
-        height: 91px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-        color: #555;
-        display: block;
-        font-size: 14px;
-        line-height: 1.42857;
-        padding: 6px 12px;
-        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-        width: 100%;
-      }
+    <h2 class="project-tagline">Let textarea or editable div has ability to insert emoji. <br>让文本框或div具备插入表情功能。</h2>
+    <a href="https://github.com/eshengsky/jquery-emojis" class="btn">View on GitHub</a>
+    <a href="https://github.com/eshengsky/jquery-emojis/zipball/master" class="btn">Download .zip</a>
+    <a href="https://github.com/eshengsky/jquery-emojis/tarball/master" class="btn">Download .tar.gz</a>
+</section>
 
-      #editor:focus {
-        border-color: #66afe9;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
-        outline: 0 none;
-      }
-
-      #btn {
-        margin-top: 10px;
-      }
-
-      .m-t-20 {
-        margin-top: 20px;
-      }
-
-      .m-t-70{
-        margin-top: 70px;
-      }
-
-      .main-content pre{
-        font-size: 1.2em;
-      }
-    </style>
-
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Jquery-emojis</h1>
-      <h2 class="project-tagline">Let textarea or editable div has ability to insert emoji. 让文本框或div能快速插入表情符号。</h2>
-      <a href="https://github.com/eshengsky/jquery-emojis" class="btn">View on GitHub</a>
-      <a href="https://github.com/eshengsky/jquery-emojis/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/eshengsky/jquery-emojis/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
-
-    <section class="main-content container">
-      <div class="">
-        <div class="row firstRow">
-          <div class="col-md-6">
+<section class="main-content container">
+    <div class="row firstRow">
+        <div class="col-md-6">
             <h4>文本框 textarea</h4>
             <textarea class="form-control" id="content" rows="3"></textarea>
+
             <div class="m-t-70">
-              <button class="btn btn-primary m-t-70" id="btnLoad1">加载表情 load emoji</button>
+                <button class="btn btn-primary m-t-70" id="btnLoad1">加载表情 load emoji</button>
             </div>
-          </div>
-          <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
             <h4>代码 code</h4>
             <pre class="pre-scrollable">
 $("#content").emojis({
@@ -148,20 +107,20 @@ $("#content").emojis({
     }]
 });
             </pre>
-          </div>
         </div>
-        <hr/>
-        <div class="row m-t-20">
-          <div class="col-md-6">
+    </div>
+    <hr/>
+    <div class="row m-t-20">
+        <div class="col-md-6">
             <h4>可编辑div editable div</h4>
 
             <div id="editor" contenteditable="true">123</div>
             <button id="btn" class="btn btn-sm btn-default">:)</button>
             <div class="m-t-70">
-              <button class="btn btn-primary m-t-70" id="btnLoad2">加载表情 load emoji</button>
+                <button class="btn btn-primary m-t-70" id="btnLoad2">加载表情 load emoji</button>
             </div>
-          </div>
-          <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
             <h4>代码 code</h4>
             <pre class="pre-scrollable">
 $("#editor").emojis({
@@ -179,20 +138,22 @@ $("#editor").emojis({
     }]
 });
             </pre>
-          </div>
         </div>
-        <hr/>
-        <div class="row m-t-20">
-          <div class="col-md-6">
+    </div>
+    <hr/>
+    <div class="row m-t-20">
+        <div class="col-md-6">
             <h4>文本转换 text parse</h4>
-            <div class="well" id="sourceText">
-              <span>It's a #tieba_40# day, I had a #tieba_43#, and feel nice~ #qq_14#</span>
+            <div class="panel panel-default" id="sourceText">
+                <div class="panel-body">
+                    <span>It's a #tieba_40# day, I had a #tieba_43#, and feel nice~ #qq_14#</span>
+                </div>
             </div>
             <div class="m-t-70">
-              <button class="btn btn-primary" id="btnParse">转换 parse</button>
+                <button class="btn btn-primary" id="btnParse">转换 parse</button>
             </div>
-          </div>
-          <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
             <h4>代码 code</h4>
             <pre class="pre-scrollable">
 $("#sourceText").emojiParse({
@@ -260,180 +221,182 @@ $("#sourceText").emojiParse({
     }]
 });
             </pre>
-          </div>
         </div>
-      </div>
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/eshengsky/jquery-emojis">Jquery-emojis</a> is maintained by <a href="https://github.com/eshengsky">eshengsky</a>.</span>
+    </div>
+    <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/eshengsky/jquery-emojis">Jquery-emojis</a> is maintained by <a
+                href="https://github.com/eshengsky">eshengsky</a>.</span>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a
+                href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a
+                href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    </footer>
 
-    </section>
+</section>
 
-    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
-    <script src="lib/script/jquery.mousewheel-3.0.6.min.js"></script>
-    <script src="lib/script/jquery.mCustomScrollbar.min.js"></script>
-    <script src="js/jquery.emojis.js"></script>
-    <script>
-      $("#btnLoad1").click(function(){
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+<script src="lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+<script src="lib/script/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/jquery.emojis.js"></script>
+<script>
+    $("#btnLoad1").click(function () {
         $("#content").emojis({
-          flag: '#',
-          showTab: true,
-          animation: 'fade',
-          icons: [{
-            name: "贴吧表情",
-            path: "img/tieba/",
-            maxNum: 50,
-            file: ".jpg",
-            prefix: "tieba",
-            title: {
-              1: "呵呵",
-              2: "哈哈",
-              3: "吐舌",
-              4.: "啊",
-              5: "酷",
-              6: "怒",
-              7: "开心",
-              8: "汗",
-              9: "泪",
-              10: "黑线",
-              11: "鄙视",
-              12: "不高兴",
-              13: "真棒",
-              14: "钱",
-              15: "疑问",
-              16: "阴脸",
-              17: "吐",
-              18: "咦",
-              19: "委屈",
-              20: "花心",
-              21: "呼~",
-              22: "笑脸",
-              23: "冷",
-              24: "太开心",
-              25: "滑稽",
-              26: "勉强",
-              27: "狂汗",
-              28: "乖",
-              29: "睡觉",
-              30: "惊哭",
-              31: "生气",
-              32: "惊讶",
-              33: "喷",
-              34: "爱心",
-              35: "心碎",
-              36: "玫瑰",
-              37: "礼物",
-              38: "彩虹",
-              39: "星星月亮",
-              40: "太阳",
-              41: "钱币",
-              42: "灯泡",
-              43: "茶杯",
-              44: "蛋糕",
-              45: "音乐",
-              46: "haha",
-              47: "胜利",
-              48: "大拇指",
-              49: "弱",
-              50: "OK"
-            }
-          }, {
-            name: "QQ表情",
-            path: "img/qq/",
-            maxNum: 91,
-            excludeNums: [41, 45, 54],
-            file: ".gif",
-            prefix: "qq"
-          }]
+            flag: '#',
+            showTab: true,
+            animation: 'fade',
+            icons: [{
+                name: "贴吧表情",
+                path: "img/tieba/",
+                maxNum: 50,
+                file: ".jpg",
+                prefix: "tieba",
+                title: {
+                    1: "呵呵",
+                    2: "哈哈",
+                    3: "吐舌",
+                    4.: "啊",
+                    5: "酷",
+                    6: "怒",
+                    7: "开心",
+                    8: "汗",
+                    9: "泪",
+                    10: "黑线",
+                    11: "鄙视",
+                    12: "不高兴",
+                    13: "真棒",
+                    14: "钱",
+                    15: "疑问",
+                    16: "阴脸",
+                    17: "吐",
+                    18: "咦",
+                    19: "委屈",
+                    20: "花心",
+                    21: "呼~",
+                    22: "笑脸",
+                    23: "冷",
+                    24: "太开心",
+                    25: "滑稽",
+                    26: "勉强",
+                    27: "狂汗",
+                    28: "乖",
+                    29: "睡觉",
+                    30: "惊哭",
+                    31: "生气",
+                    32: "惊讶",
+                    33: "喷",
+                    34: "爱心",
+                    35: "心碎",
+                    36: "玫瑰",
+                    37: "礼物",
+                    38: "彩虹",
+                    39: "星星月亮",
+                    40: "太阳",
+                    41: "钱币",
+                    42: "灯泡",
+                    43: "茶杯",
+                    44: "蛋糕",
+                    45: "音乐",
+                    46: "haha",
+                    47: "胜利",
+                    48: "大拇指",
+                    49: "弱",
+                    50: "OK"
+                }
+            }, {
+                name: "QQ表情",
+                path: "img/qq/",
+                maxNum: 91,
+                excludeNums: [41, 45, 54],
+                file: ".gif",
+                prefix: "qq"
+            }]
         });
-      });
+    });
 
-      $("#btnLoad2").click(function(){
+    $("#btnLoad2").click(function () {
         $("#editor").emojis({
-          button: "#btn",
-          flag: '#',
-          showTab: false,
-          animation: 'fade',
-          icons: [{
-            name: "QQ表情",
-            path: "img/qq/",
-            maxNum: 91,
-            excludeNums: [41, 45, 54],
-            file: ".gif",
-            prefix: "qq"
-          }]
+            button: "#btn",
+            flag: '#',
+            showTab: false,
+            animation: 'fade',
+            icons: [{
+                name: "QQ表情",
+                path: "img/qq/",
+                maxNum: 91,
+                excludeNums: [41, 45, 54],
+                file: ".gif",
+                prefix: "qq"
+            }]
         });
-      });
+    });
 
-      $("#btnParse").click(function(){
+    $("#btnParse").click(function () {
         $("#sourceText").emojiParse({
-          flag: '#',
-          icons: [{
-            path: "img/tieba/",
-            file: ".jpg",
-            prefix: "tieba",
-            title: {
-              1: "呵呵",
-              2: "哈哈",
-              3: "吐舌",
-              4.: "啊",
-              5: "酷",
-              6: "怒",
-              7: "开心",
-              8: "汗",
-              9: "泪",
-              10: "黑线",
-              11: "鄙视",
-              12: "不高兴",
-              13: "真棒",
-              14: "钱",
-              15: "疑问",
-              16: "阴脸",
-              17: "吐",
-              18: "咦",
-              19: "委屈",
-              20: "花心",
-              21: "呼~",
-              22: "笑脸",
-              23: "冷",
-              24: "太开心",
-              25: "滑稽",
-              26: "勉强",
-              27: "狂汗",
-              28: "乖",
-              29: "睡觉",
-              30: "惊哭",
-              31: "生气",
-              32: "惊讶",
-              33: "喷",
-              34: "爱心",
-              35: "心碎",
-              36: "玫瑰",
-              37: "礼物",
-              38: "彩虹",
-              39: "星星月亮",
-              40: "太阳",
-              41: "钱币",
-              42: "灯泡",
-              43: "茶杯",
-              44: "蛋糕",
-              45: "音乐",
-              46: "haha",
-              47: "胜利",
-              48: "大拇指",
-              49: "弱",
-              50: "OK"
-            }
-          }, {
-            path: "img/qq/",
-            file: ".gif",
-            prefix: "qq"
-          }]
+            flag: '#',
+            icons: [{
+                path: "img/tieba/",
+                file: ".jpg",
+                prefix: "tieba",
+                title: {
+                    1: "呵呵",
+                    2: "哈哈",
+                    3: "吐舌",
+                    4.: "啊",
+                    5: "酷",
+                    6: "怒",
+                    7: "开心",
+                    8: "汗",
+                    9: "泪",
+                    10: "黑线",
+                    11: "鄙视",
+                    12: "不高兴",
+                    13: "真棒",
+                    14: "钱",
+                    15: "疑问",
+                    16: "阴脸",
+                    17: "吐",
+                    18: "咦",
+                    19: "委屈",
+                    20: "花心",
+                    21: "呼~",
+                    22: "笑脸",
+                    23: "冷",
+                    24: "太开心",
+                    25: "滑稽",
+                    26: "勉强",
+                    27: "狂汗",
+                    28: "乖",
+                    29: "睡觉",
+                    30: "惊哭",
+                    31: "生气",
+                    32: "惊讶",
+                    33: "喷",
+                    34: "爱心",
+                    35: "心碎",
+                    36: "玫瑰",
+                    37: "礼物",
+                    38: "彩虹",
+                    39: "星星月亮",
+                    40: "太阳",
+                    41: "钱币",
+                    42: "灯泡",
+                    43: "茶杯",
+                    44: "蛋糕",
+                    45: "音乐",
+                    46: "haha",
+                    47: "胜利",
+                    48: "大拇指",
+                    49: "弱",
+                    50: "OK"
+                }
+            }, {
+                path: "img/qq/",
+                file: ".gif",
+                prefix: "qq"
+            }]
         });
-      });
+    });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>
