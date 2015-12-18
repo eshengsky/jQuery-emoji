@@ -3,3 +3,4 @@
 Let textarea or editable div has ability to insert emoji.
 
 Demo
+http://eshengsky.github.io/jquery-emojis/
