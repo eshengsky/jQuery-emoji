@@ -23,6 +23,8 @@
 </section>
 
 <section class="main-content container">
+    <h2>实例 demo</h2>
+
     <div class="row firstRow">
         <div class="col-md-6">
             <h4>文本框 textarea</h4>
@@ -144,6 +146,7 @@ $("#editor").emojis({
     <div class="row m-t-20">
         <div class="col-md-6">
             <h4>文本转换 text parse</h4>
+
             <div class="panel panel-default" id="sourceText">
                 <div class="panel-body">
                     <span>It's a #tieba_40# day, I had a #tieba_43#, and feel nice~ #qq_14#</span>
@@ -171,6 +174,187 @@ $("#sourceText").emojiParse({
             </pre>
         </div>
     </div>
+    <h2>用法 usage</h2>
+
+    <p>
+        对文本框或可编辑div调用emoji<br>
+        call emoji for textarea or editable div
+    </p>
+
+    <pre>
+$("#content").emojis(options);
+    </pre>
+    <h2>参数 options</h2>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>名称 name</th>
+            <th>类型 type</th>
+            <th>默认值 default</th>
+            <th>说明 desc</th>
+        </tr>
+        <tr>
+            <td>button</td>
+            <td>String</td>
+            <td>''</td>
+            <td>
+                触发表情面板的按钮的选择器，如"#btn1"，若指定则将表情选择面板绑定到该按钮，若为空，则自动创建一个按钮。<br>
+                button selector, such as "#btn1", if has value, bind it to the emoji panel. If it is empty, then
+                automatically creates a button.
+            </td>
+        </tr>
+        <tr>
+            <td>flag</td>
+            <td>String</td>
+            <td>'#'</td>
+            <td>
+                插入的表情代码标志。<br>
+                the inserted emoji code flag.
+            </td>
+        </tr>
+        <tr>
+            <td>showTab</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>
+                当只有一组表情时，是否仍然显示Tab。<br>
+                if show tab when only one emoji group.
+            </td>
+        </tr>
+        <tr>
+            <td>animation</td>
+            <td>String</td>
+            <td>'fade'</td>
+            <td>
+                表情面板动画效果，可能的值：'fade':淡入淡出，'slide':滚动，'none':无动画。<br>
+                the animation effect for emoji panel, possible values: 'fade':fade-in fade-out, 'slide':roll, 'none':no
+                animation.
+            </td>
+        </tr>
+        <tr>
+            <td>icons</td>
+            <td>Array</td>
+            <td>[]</td>
+            <td>
+                表情组。<br>
+                icons group.
+            </td>
+        </tr>
+        <tr>
+            <td>icons:{ name }</td>
+            <td>String</td>
+            <td></td>
+            <td>
+                该组表情名称。<br>
+                the name of the icons group.
+            </td>
+        </tr>
+        <tr>
+            <td>icons:{ path }</td>
+            <td>String</td>
+            <td></td>
+            <td>
+                该组表情路径（表情文件必须是1,2,3...命名）。<br>
+                the path of the icons group(icon file must named as 1 ,2 ,3...).
+            </td>
+        </tr>
+        <tr>
+            <td>icons:{ maxNum }</td>
+            <td>Number</td>
+            <td></td>
+            <td>
+                该组表情文件名的最大数。<br>
+                the max number of the icons group file name.
+            </td>
+        </tr>
+        <tr>
+            <td>icons:{ excludeNums }</td>
+            <td>Array</td>
+            <td>[]</td>
+            <td>
+                要排除的表情文件集合。<br>
+                the exclude icon files.
+            </td>
+        </tr>
+        <tr>
+            <td>icons:{ file }</td>
+            <td>String</td>
+            <td>'.jpg'</td>
+            <td>
+                表情文件的后缀名。<br>
+                the icon file extension.
+            </td>
+        </tr>
+        <tr>
+            <td>icons:{ prefix }</td>
+            <td>String</td>
+            <td></td>
+            <td>
+                该组表情的代码标志。<br>
+                the code for the icon group.
+            </td>
+        </tr>
+        <tr>
+            <td>icons:{ title }</td>
+            <td>Object</td>
+            <td></td>
+            <td>
+                每个表情指上去显示的文字，格式：fileName:title, 如：1:'good'。<br>
+                the shows title for each emoji, format: fileName:title, such as: 1:'good'.
+            </td>
+        </tr>
+    </table>
+    <h2>方法 method</h2>
+
+    <h4>
+        <code>.emoji(options);</code>
+    </h4>
+
+    <p>
+        初始化表情。<br>
+        initialize emojis.
+    </p>
+    <pre>
+$("#editor").emojis({
+    icons: [{
+        name: "QQ表情",
+        path: "img/qq/",
+        maxNum: 91,
+        excludeNums: [41, 45, 54],
+        file: ".gif",
+        prefix: "qq"
+    }]
+});
+    </pre>
+    <h4>
+        <code>.emoji('show');</code>
+    </h4>
+    <p>
+        显示表情面板。<br>
+        show emojis panel.
+    </p>
+    <pre>
+$("#editor").emojis('show');
+    </pre>
+    <h4>
+        <code>.emoji('hide');</code>
+    </h4>
+    <p>
+        隐藏表情面板。<br>
+        hide emojis panel.
+    </p>
+    <pre>
+$("#editor").emojis('hide');
+    </pre>
+    <h4>
+        <code>.emoji('toggle');</code>
+    </h4>
+    <p>
+        切换显示隐藏表情面板。<br>
+        show or hide emojis panel.
+    </p>
+    <pre>
+$("#editor").emojis('toggle');
+    </pre>
     <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/eshengsky/jquery-emojis">Jquery-emojis</a> is maintained by <a
                 href="https://github.com/eshengsky">eshengsky</a>.</span>
@@ -179,7 +363,6 @@ $("#sourceText").emojiParse({
                 href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a
                 href="https://twitter.com/jasonlong">Jason Long</a>.</span>
     </footer>
-
 </section>
 
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
