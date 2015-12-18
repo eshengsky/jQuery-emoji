@@ -5,10 +5,10 @@
 +function ($, window, document) {
 
     //插件名称
-    var PLUGIN_NAME = 'emojis',
+    var PLUGIN_NAME = 'emoji',
 
     //版本号
-        VERSION = '0.0.1',
+        VERSION = '1.0.0',
 
     //默认值
         DEFAULTS = {
