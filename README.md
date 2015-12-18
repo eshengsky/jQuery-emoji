@@ -3,7 +3,7 @@
 Let textarea or editable div has ability to insert emoji.
 
 ##实例&参数 Demo&Options
-http://eshengsky.github.io/jquery-emojis/
+http://eshengsky.github.io/jquery-emoji/
 
 ##功能 Function
 * 支持给textarea或可编辑div加上表情功能，自动识别元素类型。Support for adding emoji to textarea or editable div, automatic identification of element types.
