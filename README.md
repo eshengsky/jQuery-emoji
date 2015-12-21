@@ -11,5 +11,5 @@ Let textarea or editable div has ability to insert emoji.
 * 同一页面支持多个表情实例。Support for multiple instances in one page.
 
 ### 示例与文档 Demo&Doc
-http://eshengsky.github.io/jquery-emoji/ 
+http://eshengsky.github.io/jQuery-emoji/ 
 
