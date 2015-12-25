@@ -7,8 +7,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="lib/css/bootstrap.css"/>
     <link rel="stylesheet" href="lib/css/jquery.mCustomScrollbar.min.css"/>
-    <link rel="stylesheet" href="css/jquery.emoji.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="dist/css/jquery.emoji.css"/>
+    <link rel="stylesheet" href="dist/css/index.css"/>
 </head>
 <body>
 <section class="page-header">
@@ -393,7 +393,7 @@ $("#editor").emoji('toggle');
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
 <script src="lib/script/jquery.mousewheel-3.0.6.min.js"></script>
 <script src="lib/script/jquery.mCustomScrollbar.min.js"></script>
-<script src="js/jquery.emoji.js"></script>
+<script src="dist/js/jquery.emoji.min.js"></script>
 <script>
     $("#btnLoad1").click(function () {
         $("#content").emoji({
@@ -402,7 +402,7 @@ $("#editor").emoji('toggle');
             animation: 'fade',
             icons: [{
                 name: "贴吧表情",
-                path: "img/tieba/",
+                path: "dist/img/tieba/",
                 maxNum: 50,
                 file: ".jpg",
                 prefix: "tieba",
@@ -460,7 +460,7 @@ $("#editor").emoji('toggle');
                 }
             }, {
                 name: "QQ表情",
-                path: "img/qq/",
+                path: "dist/img/qq/",
                 maxNum: 91,
                 excludeNums: [41, 45, 54],
                 file: ".gif",
@@ -477,7 +477,7 @@ $("#editor").emoji('toggle');
             animation: 'fade',
             icons: [{
                 name: "QQ表情",
-                path: "img/qq/",
+                path: "dist/img/qq/",
                 maxNum: 91,
                 excludeNums: [41, 45, 54],
                 file: ".gif",
@@ -490,11 +490,11 @@ $("#editor").emoji('toggle');
         $("#sourceText").emojiParse({
             flag: '#',
             icons: [{
-                path: "img/tieba/",
+                path: "dist/img/tieba/",
                 file: ".jpg",
                 prefix: "tieba"
             }, {
-                path: "img/qq/",
+                path: "dist/img/qq/",
                 file: ".gif",
                 prefix: "qq"
             }]
