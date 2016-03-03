@@ -6,7 +6,7 @@
     height: 25px;
 }
 
-.emoji_container *{
+.emoji_container * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -56,6 +56,8 @@
 
 .emoji_content ul li a img {
     vertical-align: middle;
+    max-width: 52px;
+    max-height: 52px;
 }
 
 .emoji_content .mCSB_scrollTools {
@@ -157,4 +159,6 @@
 
 .emoji_preview img {
     vertical-align: middle;
+    max-width: 42px;
+    max-height: 42px;
 }

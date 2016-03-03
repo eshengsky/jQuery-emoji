@@ -125,3 +125,8 @@ hr {
     margin-top: 32px;
     margin-bottom: 32px
 }
+
+pre {
+    padding: 0;
+    border: 0;
+}

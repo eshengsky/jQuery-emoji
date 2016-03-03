@@ -1,15 +1,13 @@
 {
   "bitwise": true,
   "browser": true,
-  "camelcase": true,
-  "curly": true,
   "eqeqeq": true,
   "forin": true,
   "freeze": false,
   "indent": 2,
   "maxdepth": 6,
   "maxparams": 6,
-  "maxstatements": 50,
+  "maxstatements": 150,
   "newcap": true,
   "noarg": true,
   "noempty": true,
@@ -17,8 +15,7 @@
   "nonew": true,
   "quotmark": "single",
   "trailing": true,
-  "unused": "vars",
   "immed": true,
-  "browser": true,
+  "loopfunc": true,
   "jquery": true
 }
