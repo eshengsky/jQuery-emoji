@@ -1,6 +1,9 @@
 # jQuery-emoji
-让文本框或可编辑div具备插入表情功能。
+让文本框或可编辑div具备插入表情功能。  
 Let textarea or editable div has ability to insert emoji.
+
+## 预览 Preview
+![image](http://www.skysun.name/images/jquery-emoji.png)
 
 ## 功能 Features
 * 支持给textarea或可编辑div加上表情功能，自动识别元素类型。  
@@ -18,6 +21,6 @@ The demo has been with 2 sets of emojis:Baidu tieba emoji & QQ HD emoji.
 * 同一页面支持多个表情实例。  
 Support for multiple instances in one page.
 
-## 示例与文档 Demo&Doc
+## 示例&文档 Demo&Doc
 [http://eshengsky.github.io/jQuery-emoji/](http://eshengsky.github.io/jQuery-emoji/)
 
