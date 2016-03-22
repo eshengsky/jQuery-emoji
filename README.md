@@ -25,16 +25,21 @@ Support for multiple instances in one page.
 [http://eshengsky.github.io/jQuery-emoji/](http://eshengsky.github.io/jQuery-emoji/)
 
 ## 更新日志 Changelog
-* 优化代码。  
-Optimized code.
+####v1.2 2016/03/04
 * 修改默认表情按钮图片，以解决IE下不显示svg类型base64图片的问题。  
 Modify the default button image, in order to solve the problem that does not display svg type base64 image with IE.
+
+####v1.1 2016/03/03
+* 优化代码。  
+Optimized code.
 * 移除原先的flag和prefix配置项，新增placeholder配置项，可以完全自定义表情代码。  
 Removed flag and prefix configs, a new config placeholder added, you can completely customize the emoji code.
 * 现在分组名称不再是必填项。  
 Now the name of the icons group is no more required.
 * 插入或转换后的表情图片现在有了一个emoji_icon的class，可以自己定义样式。  
 The emoji picture inserted or parsed now has a class 'emoji_icon', you can define your style.
+* 优化将表情代码转换为表情图片时的正则表达式为懒惰匹配。  
+Optimized the regular expression about parsing emoji code to emoji picture to lazy match.
 
 ## 许可协议 License
 The MIT License (MIT)
