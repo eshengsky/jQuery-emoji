@@ -14,7 +14,6 @@
 
 .emoji_container {
     display: none;
-    width: 544px;
     position: absolute;
     background-color: #fff;
     border: 1px solid #bfbfbf;
@@ -56,8 +55,8 @@
 
 .emoji_content ul li a img {
     vertical-align: middle;
-    max-width: 52px;
-    max-height: 52px;
+    max-width: 30px;
+    max-height: 30px;
 }
 
 .emoji_content .mCSB_scrollTools {
@@ -109,7 +108,6 @@
     overflow: hidden;
     position: absolute;
     top: 0;
-    width: 500px;
 }
 
 .emoji_tab_list ul {

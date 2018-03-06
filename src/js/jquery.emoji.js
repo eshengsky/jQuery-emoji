@@ -2,9 +2,28 @@
  * Created by Sky on 2015/12/11.
  */
 (function ($, window, document) {
+    if (!Array.prototype.indexOf) {
+        Array.prototype.indexOf = function (elt) {
+            var len = this.length >>> 0;
+
+            var from = Number(arguments[1]) || 0;
+            from = (from < 0)
+                ? Math.ceil(from)
+                : Math.floor(from);
+            if (from < 0)
+                from += len;
+
+            for (; from < len; from++) {
+                if (from in this &&
+                    this[from] === elt)
+                    return from;
+            }
+            return -1;
+        };
+    }
 
     var PLUGIN_NAME = 'emoji',
-        VERSION = '1.1.0',
+        VERSION = '1.3.0',
         DEFAULTS = {
             showTab: true,
             animation: 'fade',
@@ -33,7 +52,7 @@
                 this.hideFunc = 'fadeOut';
                 this.toggleFunc = 'fadeToggle';
                 break;
-            default :
+            default:
                 this.showFunc = 'fadeIn';
                 this.hideFunc = 'fadeOut';
                 this.toggleFunc = 'fadeToggle';
@@ -49,15 +68,15 @@
             var newBtn,
                 contentTop,
                 contentLeft,
-                btnTop,
-                btnLeft;
+                panelTop,
+                panelLeft;
             var ix = that.index;
             if (!btn) {
                 newBtn = '<input type="image" class="emoji_btn" id="emoji_btn_' + ix + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZBAMAAAA2x5hQAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAkUExURUxpcfTGAPTGAPTGAPTGAPTGAPTGAPTGAPTGAPTGAPTGAPTGAOfx6yUAAAALdFJOUwAzbVQOoYrzwdwkAoU+0gAAAM1JREFUGNN9kK0PQWEUxl8fM24iCYopwi0muuVuzGyKwATFZpJIU01RUG/RBMnHxfz+Oef9uNM84d1+23nO+zxHKVG2WWupRJkdcAwtpCK0lpbqWE01pB0QayonREMoIp7AawQrWSgGGb4pn6dSeSh68FAVXqHqy3wKrkJiDGDTg3dnp//w+WnwlwIOJauF+C7sXRVfdha4O4oIJfTbtdSxs2uqhs585A0ko8iLTMEcDE1n65A+29pYAlr72nz9dKu7GuNTcsL2fDQzB/wCPVJ69nZGb3gAAAAASUVORK5CYII="/>';
                 contentTop = this.$content.offset().top + this.$content.outerHeight() + 10;
                 contentLeft = this.$content.offset().left + 2;
                 $(newBtn).appendTo($('body'));
-                $('#emoji_btn_' + ix).css({'top': contentTop + 'px', 'left': contentLeft + 'px'});
+                $('#emoji_btn_' + ix).css({ 'top': contentTop + 'px', 'left': contentLeft + 'px' });
                 btn = '#emoji_btn_' + ix;
             }
 
@@ -127,9 +146,41 @@
 
             $(emoji_container).appendTo($('body'));
 
-            btnTop = $(btn).offset().top + $(btn).outerHeight() + 5;
-            btnLeft = $(btn).offset().left;
-            $('#emoji_container_' + ix).css({'top': btnTop + 'px', 'left': btnLeft + 'px'});
+            // calc panel width
+            var panelWidth = '544px';
+            var winWidth = $(window).width();
+            if (winWidth < 544) {
+                switch (this.options.position) {
+                    case 'topLeft':
+                    case 'bottomLeft':
+                        panelWidth = (winWidth - $(btn).offset().right * 2) + 'px';
+                        break;
+                    default:
+                        panelWidth = (winWidth - $(btn).offset().left * 2) + 'px';
+                }
+            }
+            $('#emoji_container_' + ix).css('width', panelWidth);
+            $('#emoji_container_' + ix + ' .emoji_tab_list').css('width', (parseInt(panelWidth) - 44) + 'px');
+
+            // calc panel position
+            switch (this.options.position) {
+                case 'topLeft':
+                    panelTop = $(btn).offset().top - $('#emoji_container_' + ix).outerHeight() - 5;
+                    panelLeft = $(btn).offset().left - $('#emoji_container_' + ix).outerWidth() + $(btn).outerHeight();
+                    break;
+                case 'topRight':
+                    panelTop = $(btn).offset().top - $('#emoji_container_' + ix).outerHeight() - 5;
+                    panelLeft = $(btn).offset().left;
+                    break;
+                case 'bottomLeft':
+                    panelTop = $(btn).offset().top + $(btn).outerHeight() + 5;
+                    panelLeft = $(btn).offset().left - $('#emoji_container_' + ix).outerWidth() + $(btn).outerHeight();
+                    break;
+                default:
+                    panelTop = $(btn).offset().top + $(btn).outerHeight() + 5;
+                    panelLeft = $(btn).offset().left;
+            }
+            $('#emoji_container_' + ix).css({ 'top': panelTop + 'px', 'left': panelLeft + 'px' });
 
             $('#emoji_container_' + ix + ' .emoji_content').mCustomScrollbar({
                 theme: 'minimal-dark',
@@ -194,9 +245,9 @@
             $('#emoji_container_' + ix + ' .emoji_icons a').mouseenter(function () {
                 var index = $(this).data('index');
                 if (parseInt(index / 5) % 2 === 0) {
-                    $('#emoji_container_' + ix + ' .emoji_preview').css({'left': 'auto', 'right': 0});
+                    $('#emoji_container_' + ix + ' .emoji_preview').css({ 'left': 'auto', 'right': 0 });
                 } else {
-                    $('#emoji_container_' + ix + ' .emoji_preview').css({'left': 0, 'right': 'auto'});
+                    $('#emoji_container_' + ix + ' .emoji_preview').css({ 'left': 0, 'right': 'auto' });
                 }
                 var src = $(this).find('img').attr('src');
                 $('#emoji_container_' + ix + ' .emoji_preview img').attr('src', src).parent().show();
@@ -240,7 +291,7 @@
                 } else if ((sel = document.selection) && sel.type !== 'Control') {
                     var originalRange = sel.createRange();
                     originalRange.collapse(true);
-                    sel.createRange().pasteHTML(html);
+                    sel.createRange().pasteHTML(value);
                     if (selectPastedContent) {
                         range = sel.createRange();
                         range.setEndPoint('StartToStart', originalRange);
@@ -306,7 +357,7 @@
 (function ($, window, document) {
 
     var PLUGIN_NAME = 'emojiParse',
-        VERSION = '1.1.0',
+        VERSION = '1.3.0',
         DEFAULTS = {
             icons: []
         };

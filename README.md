@@ -16,20 +16,34 @@ Support for specifying the code format of emoji.
 Support for converting the code string of emoji into emoji picture.
 * 支持多组表情并提供tab切换。  
 Support for multiple groups of emoji and tabs to toggle.
-* 示例已带有百度贴吧和qq高清2套表情。  
-The demo has been with 2 sets of emojis:Baidu tieba emoji & QQ HD emoji.
+* 示例已带有百度贴吧、emoji高清、qq高清3套表情。  
+The demo has been with 3 sets of expression:Baidu tieba, emoji HD & QQ HD expressions.
 * 同一页面支持多个表情实例。  
 Support for multiple instances in one page.
+
+## 兼容性 Compatibility
+兼容>=IE8的现代浏览器。  
+Compatible with IE8+ and modern browsers.
 
 ## 示例&文档 Demo&Doc
 [http://eshengsky.github.io/jQuery-emoji/](http://eshengsky.github.io/jQuery-emoji/)
 
 ## 更新日志 Changelog
-####v1.2 2016/03/04
+
+#### v1.3 2018/03/06
+* 增加一套默认表情。  
+Add new default emoji package.
+* 新增参数'position'支持调整面板位置。  
+Support to adjust panel postion with 'positon' option.
+* 修复IE8不兼容的问题。  
+Fix some bugs on IE8.
+
+
+#### v1.2 2016/03/04
 * 修改默认表情按钮图片，以解决IE下不显示svg类型base64图片的问题。  
 Modify the default button image, in order to solve the problem that does not display svg type base64 image with IE.
 
-####v1.1 2016/03/03
+#### v1.1 2016/03/03
 * 优化代码。  
 Optimized code.
 * 移除原先的flag和prefix配置项，新增placeholder配置项，可以完全自定义表情代码。  
@@ -44,7 +58,7 @@ Optimized the regular expression about parsing emoji code to emoji picture to la
 ## 许可协议 License
 The MIT License (MIT)
 
-Copyright (c) 2016 Sky
+Copyright (c) 2018 孙正华
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
