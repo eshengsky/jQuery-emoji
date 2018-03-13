@@ -1,7 +1,11 @@
 {
-  "name": "jQuery-emoji",
-  "version": "1.3.0",
+  "name": "jquery-emoji",
+  "version": "1.3.1",
   "description": "Let textarea or editable div has ability to insert emoji. 让文本框或div具备插入表情功能。",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eshengsky/jQuery-emoji.git"
+  },
   "keywords": [
     "jQuery",
     "jQuery-emoji",
